@@ -1,0 +1,9 @@
+car
+traffic_sign
+truck
+pedestrian_crossing
+bicycle
+road_mark
+bus
+pedestrian
+motorcycle

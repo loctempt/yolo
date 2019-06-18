@@ -20,10 +20,14 @@ from keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = {
-        "model_path": 'model_data/yolo.h5',
-        "anchors_path": 'model_data/yolo_anchors.txt',
+        # "model_path": 'model_data/yolo.h5',
+        # "anchors_path": 'model_data/yolo_anchors.txt',
+        
+        "model_path": 'model_data/yolo-tiny.h5',
+        "anchors_path": 'model_data/tiny_yolo_anchors.txt',
+
         "classes_path": 'model_data/coco_classes.txt',
-        "score" : 0.3,
+        "score" : 0.25,
         "iou" : 0.45,
         "model_image_size" : (416, 416),
         "gpu_num" : 1,
@@ -188,6 +192,7 @@ def detect_video(yolo, video_path, output_path=""):
     prev_time = timer()
     while True:
         return_value, frame = vid.read()
+        if frame is None: break
         image = Image.fromarray(frame)
         image = yolo.detect_image(image)
         result = np.asarray(image)

@@ -2,8 +2,11 @@
 *.png
 *.weights
 *.h5
+*.mp4
 logs/
 *_test.py
+
+demo/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
